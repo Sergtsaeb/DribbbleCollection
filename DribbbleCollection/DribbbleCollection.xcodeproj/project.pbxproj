@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0B53FA91EBE9F1C00C3CE8E /* GalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B53FA81EBE9F1C00C3CE8E /* GalleryItem.swift */; };
 		C0C4EF181EA83A9E000B4F02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4EF171EA83A9E000B4F02 /* AppDelegate.swift */; };
 		C0C4EF1D1EA83A9E000B4F02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C4EF1B1EA83A9E000B4F02 /* Main.storyboard */; };
 		C0C4EF1F1EA83A9E000B4F02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0C4EF1E1EA83A9E000B4F02 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C0B53FA81EBE9F1C00C3CE8E /* GalleryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryItem.swift; sourceTree = "<group>"; };
 		C0C4EF141EA83A9E000B4F02 /* DribbbleCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DribbbleCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0C4EF171EA83A9E000B4F02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0C4EF1C1EA83A9E000B4F02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,10 +60,10 @@
 		C0C4EF161EA83A9E000B4F02 /* DribbbleCollection */ = {
 			isa = PBXGroup;
 			children = (
-				C0C4EF321EA83DC0000B4F02 /* Supplementary */,
 				C0C4EF311EA83DA7000B4F02 /* Controller */,
 				C0C4EF301EA83DA2000B4F02 /* View */,
 				C0C4EF2F1EA83D9A000B4F02 /* Model */,
+				C0C4EF321EA83DC0000B4F02 /* Supplementary */,
 			);
 			path = DribbbleCollection;
 			sourceTree = "<group>";
@@ -78,6 +80,7 @@
 			children = (
 				C0C4EF1B1EA83A9E000B4F02 /* Main.storyboard */,
 				C0C4EF291EA83BCF000B4F02 /* DribbbleCell.swift */,
+				C0B53FA81EBE9F1C00C3CE8E /* GalleryItem.swift */,
 				C0C4EF2A1EA83BCF000B4F02 /* DribbbleCell.xib */,
 			);
 			name = View;
@@ -179,6 +182,7 @@
 				C0C4EF2E1EA83BF4000B4F02 /* DribbbleCollectionView.swift in Sources */,
 				C0C4EF181EA83A9E000B4F02 /* AppDelegate.swift in Sources */,
 				C0C4EF2B1EA83BCF000B4F02 /* DribbbleCell.swift in Sources */,
+				C0B53FA91EBE9F1C00C3CE8E /* GalleryItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +346,7 @@
 				C0C4EF281EA83A9E000B4F02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

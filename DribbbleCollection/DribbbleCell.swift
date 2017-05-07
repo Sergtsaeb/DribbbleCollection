@@ -12,10 +12,13 @@ class DribbbleCell: UICollectionViewCell {
 
     @IBOutlet weak var dribbbleImage: UIImageView!
     
+//    func setGalleryItem(_ item:DribbbleCell) {
+//        dribbbleImage.image = UIImage(named: item.dribbbleImage)
+//    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
         
     }
 
