@@ -26,21 +26,50 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nRG-C8-OSo">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="itemSize" width="300" height="300"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fw3-2F-7h7" customClass="DribbbleCell" customModule="DribbbleCollection" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="37.5" y="50" width="300" height="300"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sBi-jb-1BJ">
+                                                    <rect key="frame" x="8" y="8" width="284" height="284"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="sBi-jb-1BJ" firstAttribute="top" secondItem="fw3-2F-7h7" secondAttribute="topMargin" id="AJp-Ng-stW"/>
+                                            <constraint firstItem="sBi-jb-1BJ" firstAttribute="leading" secondItem="fw3-2F-7h7" secondAttribute="leadingMargin" id="Aug-A5-J3B"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="sBi-jb-1BJ" secondAttribute="trailing" id="PQf-RB-MnL"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="sBi-jb-1BJ" secondAttribute="bottom" id="vYP-Vc-eyv"/>
+                                        </constraints>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Sqp-27-xBZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dribbble Collection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAh-Yl-jlN">
+                                            <rect key="frame" x="8" y="8" width="359" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qAh-Yl-jlN" firstAttribute="top" secondItem="Sqp-27-xBZ" secondAttribute="topMargin" id="CWl-cR-EIb"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="qAh-Yl-jlN" secondAttribute="bottom" id="aI0-Ze-rbS"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="qAh-Yl-jlN" secondAttribute="trailing" id="chl-kS-x9B"/>
+                                        <constraint firstItem="qAh-Yl-jlN" firstAttribute="leading" secondItem="Sqp-27-xBZ" secondAttribute="leadingMargin" id="nfO-pu-UDb"/>
+                                    </constraints>
+                                </collectionReusableView>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
