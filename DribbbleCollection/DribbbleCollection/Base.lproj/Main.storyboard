@@ -44,6 +44,7 @@
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" red="0.5450980392" green="0.4549019608" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="sBi-jb-1BJ" firstAttribute="top" secondItem="fw3-2F-7h7" secondAttribute="topMargin" id="AJp-Ng-stW"/>
                                             <constraint firstItem="sBi-jb-1BJ" firstAttribute="leading" secondItem="fw3-2F-7h7" secondAttribute="leadingMargin" id="Aug-A5-J3B"/>
@@ -63,6 +64,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.5450980392" green="0.4549019608" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="qAh-Yl-jlN" firstAttribute="top" secondItem="Sqp-27-xBZ" secondAttribute="topMargin" id="CWl-cR-EIb"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="qAh-Yl-jlN" secondAttribute="bottom" id="aI0-Ze-rbS"/>

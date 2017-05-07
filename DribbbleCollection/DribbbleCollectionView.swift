@@ -58,7 +58,7 @@ extension DribbbleCollectionView: UICollectionViewDelegate, UICollectionViewData
         
         let headerView = inspireCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "dribbbleHeader", for: indexPath)
         
-        headerView.textInputMode.customMirror.description.capitalized
+//        headerView.textInputMode.customMirror.description.capitalized
         
         return headerView
     }
