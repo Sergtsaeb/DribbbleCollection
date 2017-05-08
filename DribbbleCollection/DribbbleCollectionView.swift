@@ -18,6 +18,8 @@ class DribbbleCollectionView: UIViewController {
     
     var shotsURL = "https://api.dribbble.com/v1/shots"
     let accessToken = "cd1fb8d92975c1f17efb46df08f3ca9018aff49f30af187f92b0531d1194b0aa"
+    let clientID = "f08f587c2beffc39e8ea5fb87a45a794f37d2c9cb62042070d099a88e976d7d9"
+    let clientSecret = "ba7c4c1556986e175f3c06a6e556c6c1eafc99c6d333470bcb9affba837f9d81"
     
     typealias JSONStandard = [String: AnyObject]
     
@@ -41,6 +43,9 @@ class DribbbleCollectionView: UIViewController {
     }
     
     func callAlamo(url: String) {
+        
+        Alamofire.request("https://api.dribbble.com/v1/user?access_token=OAUTH_TOKEN").responseJSON(completionHandler: <#T##(DataResponse<Any>) -> Void#>)
+        
         Alamofire.request(url).responseJSON(completionHandler: {
             response in
 //            if let value = response.result.value as? JSONStandard, let shot = value["shot"] as? JSONStandard {
@@ -53,14 +58,22 @@ class DribbbleCollectionView: UIViewController {
         
     }
     
+    
     func parseData(JSONData: Data) {
         do {
             var readableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! JSONStandard
             
+            if let shots = readableJSON["shot"] as? JSONStandard {
+                for shot in 0...shots.count {
+                    
+                    dribbbleItems.append(shot)
+                    self.inspireCollectionView.reloadData()
+                }
+            }
+            
             print(readableJSON)
             
         } catch {
-            
             print(error)
         }
         
