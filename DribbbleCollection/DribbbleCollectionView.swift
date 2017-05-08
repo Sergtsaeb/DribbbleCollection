@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+
 
 class DribbbleCollectionView: UIViewController {
 
@@ -14,8 +16,14 @@ class DribbbleCollectionView: UIViewController {
     
     var dribbbleItems = [DribbbleCell]()
     
+    var shotsURL = "https://api.dribbble.com/v1/shots/:471756"
+    
+    
+    typealias JSONStandard = [String: AnyObject]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        callAlamo(url: shotsURL)
 
         self.inspireCollectionView.delegate = self
         self.inspireCollectionView.dataSource = self
@@ -32,10 +40,38 @@ class DribbbleCollectionView: UIViewController {
     
     }
     
+    func callAlamo(url: String) {
+        Alamofire.request(url).responseJSON(completionHandler: {
+            response in
+//            if let value = response.result.value as? JSONStandard, let shot = value["shot"] as? JSONStandard {
+//                print(shot)
+//            }
+            
+            self.parseData(JSONData: response.data!)
+            
+        })
+        
+    }
+    
+    func parseData(JSONData: Data) {
+        do {
+            var readableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! JSONStandard
+            
+            print(readableJSON)
+            
+        } catch {
+            
+            print(error)
+        }
+        
+    }
+    
     
 
 
 }
+
+
 
 extension DribbbleCollectionView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -58,14 +94,14 @@ extension DribbbleCollectionView: UICollectionViewDelegate, UICollectionViewData
         
         let headerView = inspireCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "dribbbleHeader", for: indexPath)
         
-        headerView.textInputMode.customMirror.description.capitalized
+//        headerView.textInputMode.customMirror.description.capitalized
         
         return headerView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let alert = UIAlertController(title: "item selected at:", message: "Indepath: \(indexPath)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "item selected at:", message: "Indexpath: \(indexPath)", preferredStyle: .alert)
         
         let alertAction = UIAlertAction(title: "Yay", style: .default, handler: nil)
         alert.addAction(alertAction)
