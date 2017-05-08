@@ -16,8 +16,8 @@ class DribbbleCollectionView: UIViewController {
     
     var dribbbleItems = [DribbbleCell]()
     
-    var shotsURL = "https://api.dribbble.com/v1/shots/:471756"
-    
+    var shotsURL = "https://api.dribbble.com/v1/shots"
+    let accessToken = "cd1fb8d92975c1f17efb46df08f3ca9018aff49f30af187f92b0531d1194b0aa"
     
     typealias JSONStandard = [String: AnyObject]
     
