@@ -104,8 +104,8 @@
 			children = (
 				C0C4EF1B1EA83A9E000B4F02 /* Main.storyboard */,
 				C0C4EF291EA83BCF000B4F02 /* DribbbleCell.swift */,
-				C0B53FA81EBE9F1C00C3CE8E /* GalleryItem.swift */,
 				C0C4EF2A1EA83BCF000B4F02 /* DribbbleCell.xib */,
+				C0B53FA81EBE9F1C00C3CE8E /* GalleryItem.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
