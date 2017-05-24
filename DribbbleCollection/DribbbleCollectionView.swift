@@ -15,6 +15,7 @@ class DribbbleCollectionView: UIViewController {
     @IBOutlet weak var inspireCollectionView: UICollectionView!
     
     var dribbbleItems = [DribbbleCell]()
+    var cellSize = CGSize()
     
     var shotsURL = "https://api.dribbble.com/v1/shots/"
     let accessToken = "cd1fb8d92975c1f17efb46df08f3ca9018aff49f30af187f92b0531d1194b0aa"
@@ -25,14 +26,14 @@ class DribbbleCollectionView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        self.calculateCellWidth()
         callAlamo(url: shotsURL)
 
-        self.inspireCollectionView.delegate = self
         self.inspireCollectionView.dataSource = self
-        
-        
+    
         let inspireNib = UINib(nibName: "DribbbleCell", bundle: nil)
-        self.inspireCollectionView.register(inspireNib, forCellWithReuseIdentifier: "DribbbleCell")
+        self.inspireCollectionView.register(inspireNib, forCellWithReuseIdentifier: "cell")
        
     }
     
@@ -41,9 +42,15 @@ class DribbbleCollectionView: UIViewController {
         inspireCollectionView.reloadData()
     }
     
+//    func calculateCellWidth() {
+//        let width = (kLazyLoadScreenSize - (CGFloat(kLazyLoadColumnsPerRow + 1.0) * kLazyLoadSpan)) / CGFloat(kLazyLoadColumnsPerRow) - 1
+//        let height = width * kLazyLoadAspectRatio
+//        self.cellSize = CGSize(width: width, height: height)
+//    }
+    
     func callAlamo(url: String) {
         
-//        Alamofire.request("https://api.dribbble.com/v1/user?access_token=OAUTH_TOKEN")<#T##(DataResponse<Any>) -> Void#>)
+//        Alamofire.request("https://api.dribbble.com/v1/user?access_token=OAUTH_TOKEN")(DataResponse<Any>) -> Void)
         
         Alamofire.request(url).responseJSON(completionHandler: {
             response in
@@ -97,41 +104,41 @@ extension DribbbleCollectionView: UICollectionViewDelegate, UICollectionViewData
         return dribbbleItems.count
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return cellSize
     }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        let headerView = inspireCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "dribbbleHeader", for: indexPath)
-        
-//        headerView.textInputMode.customMirror.description.capitalized
-        
-        return headerView
-    }
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        
+//        let headerView = inspireCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "dribbbleHeader", for: indexPath)
+//        
+////        headerView.textInputMode.customMirror.description.capitalized
+//        
+//        return headerView
+//    }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let alert = UIAlertController(title: "item selected at:", message: "Indexpath: \(indexPath)", preferredStyle: .alert)
-        
-        let alertAction = UIAlertAction(title: "Yay", style: .default, handler: nil)
-        alert.addAction(alertAction)
-        
-        self.present(alert, animated: true, completion: nil)
-        
-    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        
+//        let alert = UIAlertController(title: "item selected at:", message: "Indexpath: \(indexPath)", preferredStyle: .alert)
+//        
+//        let alertAction = UIAlertAction(title: "Yay", style: .default, handler: nil)
+//        alert.addAction(alertAction)
+//        
+//        self.present(alert, animated: true, completion: nil)
+//        
+//    }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let picDimension = self.view.frame.size.width / 4.0
-        return CGSize(width: picDimension, height: picDimension)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        let leftRightInset = self.view.frame.size.width / 14.0
-        return UIEdgeInsetsMake(0, leftRightInset, 0, leftRightInset)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        
+//        let picDimension = self.view.frame.size.width / 4.0
+//        return CGSize(width: picDimension, height: picDimension)
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        
+//        let leftRightInset = self.view.frame.size.width / 14.0
+//        return UIEdgeInsetsMake(0, leftRightInset, 0, leftRightInset)
+//    }
     
     
 }
