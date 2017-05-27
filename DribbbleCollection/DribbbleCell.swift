@@ -16,7 +16,6 @@ class DribbbleCell: UICollectionViewCell {
 //        dribbbleImage.image = UIImage(named: item.dribbbleImage)
 //    }
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
