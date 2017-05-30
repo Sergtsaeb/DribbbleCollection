@@ -17,6 +17,7 @@ class DribbbleCollectionView: UIViewController {
     var dribbbleItems = [DribbbleCell]()
     var cellSize = CGSize()
     
+    
     var shotsURL = "https://api.dribbble.com/v1/shots/"
     let accessToken = "cd1fb8d92975c1f17efb46df08f3ca9018aff49f30af187f92b0531d1194b0aa"
     let clientID = "f08f587c2beffc39e8ea5fb87a45a794f37d2c9cb62042070d099a88e976d7d9"
