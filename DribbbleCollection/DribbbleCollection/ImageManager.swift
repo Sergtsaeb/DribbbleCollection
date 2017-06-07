@@ -6,7 +6,7 @@
 //  Copyright © 2017 Serg Tsogtbaatar. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 private let _singletonInstance = ImageManager()
 private let kLazyLoadMaxCacheImageSize = 20
@@ -19,16 +19,15 @@ class ImageManager: NSObject {
     
     func cacheImage(image: UIImage, forURL url: String) {
         if imageCache.count > kLazyLoadMaxCacheImageSize {
-            imageCache.removeAtIndex(imageCache.startIndex)
+            imageCache.remove(at: imageCache.startIndex)
         }
         imageCache[url] = image
     }
     
-    func getImageURLList() -> [String] {
-        return kLazyLoadImages
-    }
     func cachedImageForURL(url: String) -> UIImage? {
         return imageCache[url]
     }
     func clearCache() { imageCache.removeAll() }
+    
+    
 }
