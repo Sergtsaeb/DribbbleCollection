@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01D8AD8496ED4D299349A890 /* Pods_DribbbleCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E283D59282D777A16A5BAA4 /* Pods_DribbbleCollection.framework */; };
+		C01D46621EE7CD690081A7D3 /* APIAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01D46611EE7CD690081A7D3 /* APIAlamofire.swift */; };
 		C0B53FA91EBE9F1C00C3CE8E /* GalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B53FA81EBE9F1C00C3CE8E /* GalleryItem.swift */; };
 		C0C4EF181EA83A9E000B4F02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4EF171EA83A9E000B4F02 /* AppDelegate.swift */; };
 		C0C4EF1D1EA83A9E000B4F02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C4EF1B1EA83A9E000B4F02 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		3E283D59282D777A16A5BAA4 /* Pods_DribbbleCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DribbbleCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62EB71849FD48714F9D69E6A /* Pods-DribbbleCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DribbbleCollection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DribbbleCollection/Pods-DribbbleCollection.debug.xcconfig"; sourceTree = "<group>"; };
+		C01D46611EE7CD690081A7D3 /* APIAlamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIAlamofire.swift; sourceTree = "<group>"; };
 		C0B53FA81EBE9F1C00C3CE8E /* GalleryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryItem.swift; sourceTree = "<group>"; };
 		C0C4EF141EA83A9E000B4F02 /* DribbbleCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DribbbleCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0C4EF171EA83A9E000B4F02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				C0C4EF171EA83A9E000B4F02 /* AppDelegate.swift */,
 				C0C4EF2D1EA83BF4000B4F02 /* DribbbleCollectionView.swift */,
+				C01D46611EE7CD690081A7D3 /* APIAlamofire.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				C0C4EF2E1EA83BF4000B4F02 /* DribbbleCollectionView.swift in Sources */,
 				C0C4EF181EA83A9E000B4F02 /* AppDelegate.swift in Sources */,
 				C0C4EF2B1EA83BCF000B4F02 /* DribbbleCell.swift in Sources */,
+				C01D46621EE7CD690081A7D3 /* APIAlamofire.swift in Sources */,
 				C0B53FA91EBE9F1C00C3CE8E /* GalleryItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
