@@ -6,7 +6,6 @@
 //  Copyright © 2017 Serg Tsogtbaatar. All rights reserved.
 //
 
-import Foundation
 import Alamofire
 
 func callAlamo(url: String) {

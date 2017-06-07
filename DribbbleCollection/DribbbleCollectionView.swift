@@ -9,8 +9,13 @@
 import UIKit
 import Alamofire
 
+private let kLazyLoadScreenSize = UIScreen.main.bounds.width
+private let kLazyLoadCellImageViewTag = 1
+private let kLazyLoadSpan: CGFloat = 10.0
+private let kLazyLoadAspectRatio: CGFloat = 1.0 // width / height aspect ratio for non square cells.
+private let kLazyLoadColumnsPerRow: CGFloat = 3.0 // number of columns for every row.
 
-class DribbbleCollectionView: UIViewController {
+class DribbbleCollectionViewController: UIViewController {
 
     @IBOutlet weak var inspireCollectionView: UICollectionView!
     
@@ -31,7 +36,7 @@ class DribbbleCollectionView: UIViewController {
         
         callAlamo(url: shotsURL)
         
-        self.inspireCollectionView.dataSource = self
+//        self.inspireCollectionView.dataSource = self
         
         let inspireNib = UINib(nibName: "DribbbleCell", bundle: nil)
         self.inspireCollectionView.register(inspireNib, forCellWithReuseIdentifier: "cell")
@@ -42,11 +47,10 @@ class DribbbleCollectionView: UIViewController {
         inspireCollectionView.reloadData()
     }
 
-    
     func calculateCellWidth() {
-//        let width = (kLazyLoadScreenSize - (CGFloat(kLazyLoadColumnsPerRow + 1.0) * kLazyLoadSpan)) / CGFloat(kLazyLoadColumnsPerRow) - 1
-//        let height = width * kLazyLoadAspectRatio
-//        self.cellSize = CGSize(width: width, height: height)
+        let width = (kLazyLoadScreenSize - (CGFloat(kLazyLoadColumnsPerRow + 1.0) * kLazyLoadSpan)) / CGFloat(kLazyLoadColumnsPerRow) - 1
+        let height = width * kLazyLoadAspectRatio // square factor: 1
+        self.cellSize = CGSize(width: width, height: height)
     }
 
 
@@ -54,14 +58,13 @@ class DribbbleCollectionView: UIViewController {
 
 
 
-extension DribbbleCollectionView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension DribbbleCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DribbbleCell", for: indexPath) as! DribbbleCell
         
-//        let imageView = cell.viewWithTag(kLazyLoadCellImageViewTag) as! UIImageView
-        //        imageView.image = kLazyLoadPlaceholderImage
+//        updateImageForCell(cell, inCollectionView: collectionView, withEntry: dribbbleItems[(indexPath as NSIndexPath).row] as! String, atIndexPath: indexPath)
         
         return cell
 
@@ -71,23 +74,26 @@ extension DribbbleCollectionView: UICollectionViewDelegate, UICollectionViewData
         return dribbbleItems.count
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return cellSize
     }
     
+//    func updateImageForCell(_ cell: UICollectionViewCell, inCollectionView collectionView: UICollectionView, withEntry: String, atIndexPath indexPath: IndexPath) {
+//        let imageView = cell.viewWithTag(kLazyLoadCellImageViewTag) as! UIImageView
+//        //imageView.image = kLazyLoadPlaceholderImage
+//        // load image.
+//        let imageURL = dribbbleItems[(indexPath as NSIndexPath).row]
+////        ImageManager.sharedInstance.downloadImageFromURL(imageURL) { (success, image) -> Void in
+//            if success && image != nil {
+//                if (collectionView.indexPath(for: cell) as NSIndexPath?)?.row == (indexPath as NSIndexPath).row {
+//                    imageView.image = image
+//                }
+//            }
+//        }
+//    }
+    
 
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        
-//        let picDimension = self.view.frame.size.width / 4.0
-//        return CGSize(width: picDimension, height: picDimension)
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        
-//        let leftRightInset = self.view.frame.size.width / 14.0
-//        return UIEdgeInsetsMake(0, leftRightInset, 0, leftRightInset)
-//    }
-    
+
     
 }
