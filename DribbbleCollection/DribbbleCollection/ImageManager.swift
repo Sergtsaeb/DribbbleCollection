@@ -32,19 +32,27 @@ class ImageManager: NSObject {
     
     
     func callAlamo(url: String) {
+        let urlEndpoint = "https://api.dribbble.com/v1/user?access_token=OAUTH_TOKEN"
         
-//                Alamofire.request("https://api.dribbble.com/v1/user?access_token=OAUTH_TOKEN")(DataResponse<Any>) -> Void)
-        
-//            Alamofire.request(url).responseJSON(completionHandler: {
-//                response in
-////                    if let value = response.result.value as? JSONStandard, let shot = value["shot"] as? JSONStandard
-//                    {
+        Alamofire.request(urlEndpoint).responseJSON { response in
+            
+            switch response.result {
+            
+            case .success(let data):
+                
+                DispatchQueue.main.async(execute: {
+//                    if let shot = value["shot"] as? String {
 //                        print(shot)
 //                    }
-//        
-//        
-//        
-//            })
+                })
+                
+            case .failure(let error):
+                print(error)
+                
+            }
+
+        }
+        
     }
     
     func downloadImageFromURL(_ urlString: String, completion: ((_ success: Bool, _ image: UIImage?) -> Void)?) {
@@ -72,4 +80,5 @@ class ImageManager: NSObject {
     }
     
     
+
 }
