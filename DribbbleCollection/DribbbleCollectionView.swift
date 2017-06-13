@@ -54,25 +54,25 @@ class DribbbleCollectionViewController: UIViewController {
 
     // MARK: - Lazy Loading of cells
     
-    func loadImagesForOnscreenRows() {
-        if dribbbleItems.count > 0 {
-            let visiblePaths = inspireCollectionView.indexPathsForVisibleItems
-            for indexPath in visiblePaths {
-//                let entry = dribbbleItems[(indexPath as NSIndexPath).row]
-                let cell = self.collectionView(inspireCollectionView, cellForItemAt: indexPath)
-                updateImageForCell(cell, inCollectionView: inspireCollectionView, withEntry: "dribbbleItems", atIndexPath: indexPath)
-            }
-        }
-    }
-
+//    func loadImagesForOnscreenRows() {
+//        if dribbbleItems.count > 0 {
+//            let visiblePaths = inspireCollectionView.indexPathsForVisibleItems
+//            for indexPath in visiblePaths {
+////                let entry = dribbbleItems[(indexPath as NSIndexPath).row]
+//                let cell = self.collectionView(inspireCollectionView, cellForItemAt: indexPath)
+//                updateImageForCell(cell, inCollectionView: inspireCollectionView, withEntry: "dribbbleItems", atIndexPath: indexPath)
+//            }
+//        }
+//    }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        loadImagesForOnscreenRows()
-    }
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if !decelerate { loadImagesForOnscreenRows() }
-    }
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        loadImagesForOnscreenRows()
+//    }
+//    
+//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        if !decelerate { loadImagesForOnscreenRows() }
+//    }
 
 }
 
@@ -84,7 +84,7 @@ extension DribbbleCollectionViewController: UICollectionViewDelegate, UICollecti
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DribbbleCell", for: indexPath) as! DribbbleCell
         
-        updateImageForCell(cell, inCollectionView: collectionView, withEntry: dribbbleItems[(indexPath as NSIndexPath).row] as! String, atIndexPath: indexPath)
+//        updateImageForCell(cell, inCollectionView: collectionView, withEntry: dribbbleItems[(indexPath as NSIndexPath).row] as! String, atIndexPath: indexPath)
         
         return cell
 
@@ -98,19 +98,19 @@ extension DribbbleCollectionViewController: UICollectionViewDelegate, UICollecti
         return cellSize
     }
     
-    func updateImageForCell(_ cell: UICollectionViewCell, inCollectionView collectionView: UICollectionView, withEntry: String, atIndexPath indexPath: IndexPath) {
-        let imageView = cell.viewWithTag(kLazyLoadCellImageViewTag) as! UIImageView
-        //imageView.image = kLazyLoadPlaceholderImage
-        // load image.
-        let imageURL = dribbbleItems[(indexPath as NSIndexPath).row]
-        ImageManager.sharedInstance.downloadImageFromURL(imageURL as! String) { (success, image) -> Void in
-            if success && image != nil {
-                if (collectionView.indexPath(for: cell) as NSIndexPath?)?.row == (indexPath as NSIndexPath).row {
-                    imageView.image = image
-                }
-            }
-        }
-    }
+//    func updateImageForCell(_ cell: UICollectionViewCell, inCollectionView collectionView: UICollectionView, withEntry: String, atIndexPath indexPath: IndexPath) {
+//        let imageView = cell.viewWithTag(kLazyLoadCellImageViewTag) as! UIImageView
+//        //imageView.image = kLazyLoadPlaceholderImage
+//        // load image.
+//        let imageURL = dribbbleItems[(indexPath as NSIndexPath).row]
+//        ImageManager.sharedInstance.downloadImageFromURL(imageURL as! String) { (success, image) -> Void in
+//            if success && image != nil {
+//                if (collectionView.indexPath(for: cell) as NSIndexPath?)?.row == (indexPath as NSIndexPath).row {
+//                    imageView.image = image
+//                }
+//            }
+//        }
+//    }
 
 
     
