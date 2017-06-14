@@ -29,42 +29,51 @@ class ImageManager: NSObject {
         return imageCache[url]
     }
     func clearCache() { imageCache.removeAll() }
+
     
     
-    func authorizeWith(url: String) {
-        let url = "https://api.dribbble.com/v1/user"
-        
-        
-//        let headers: HTTPHeaders = [
-//            "Authorization": "Bearer cd1fb8d92975c1f17efb46df08f3ca9018aff49f30af187f92b0531d1194b0aa",
-//            "client_id": "f08f587c2beffc39e8ea5fb87a45a794f37d2c9cb62042070d099a88e976d7d9"
-//        ]
-        let auth = "https://dribbble.com/oauth/authorize"
-        Alamofire.request(auth).responseJSON { response in
-            debugPrint(response)
-        }
-        let token = "https://dribbble.com/oauth/token"
-        let tokenUrl = URL(string: token)!
-//        Alamofire.request(tokenUrl).responseJSON {
-            
+    let clientID = "f08f587c2beffc39e8ea5fb87a45a794f37d2c9cb62042070d099a88e976d7d9"
+    let clientSecret = "ba7c4c1556986e175f3c06a6e556c6c1eafc99c6d333470bcb9affba837f9d81"
+//    "Authorization": "Bearer cd1fb8d92975c1f17efb46df08f3ca9018aff49f30af187f92b0531d1194b0aa"
+    
+//    func authorize() {
+//        let url = "https://api.dribbble.com/v1/user"
+//        
+//        
+//        
+//        let auth = "https://dribbble.com/oauth/authorize"
+//        Alamofire.request(auth).responseJSON { response in
+//            debugPrint(response)
+//        }
+//        
+//        let token = "https://dribbble.com/oauth/authorize"
+//        let tokenUrl = URL(string: token)!
+//        
+//                let headers: HTTPHeaders = [
+//                    "client_id": "f08f587c2beffc39e8ea5fb87a45a794f37d2c9cb62042070d099a88e976d7d9"
+//                ]
+//        
+//                Alamofire.request(tokenUrl, headers: headers).responseJSON { response in
+//            
+//                    print(response.result)
+//                    
 //            guard let json = response.result.value as? [String: Any] else {
 //                print("didn't get todo object as JSON from API")
 //                print("Error: \(String(describing: response.result.error))")
 //                return
 //            }
-        
-            DispatchQueue.main.async(execute: {
-//                if let shot = json["shot"] as? String {
-//                                        print(shot)
-//                                    }
-                
-                                })
-            
-            
-        }
-        
-    }
+//        
+//            DispatchQueue.main.async(execute: {
+//
+//                
+//                                })
+//            
+//            
+//        }
+//        
+//    }
     
 
 
 
+}
