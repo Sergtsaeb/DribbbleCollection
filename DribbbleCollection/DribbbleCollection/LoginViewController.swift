@@ -20,42 +20,52 @@ class LoginViewController: UIViewController {
   
     @IBAction func sendRequest(_ sender: Any) {
         authorize()
+        tokenize()
     }
     
     func authorize() {
-        let auth = "https://dribbble.com/oauth/authorize"
-        let headers: HTTPHeaders = [
-            "client_id": "f08f587c2beffc39e8ea5fb87a45a794f37d2c9cb62042070d099a88e976d7d9",
-            "state": "7664ec760696a323190dd9554f756f7abd4fbed21614bbc6875c03eadc0f8274"
+        let auth = "https://dribbble.com/oauth/authorize?client_id=f08f587c2beffc39e8ea5fb87a45a794f37d2c9cb62042070d099a88e976d7d9&scope=public+write"
+        
+        let authHeader: HTTPHeaders = [
+            "client_id": "f08f587c2beffc39e8ea5fb87a45a794f37d2c9cb62042070d099a88e976d7d9"
         ]
         
-        Alamofire.request(auth, headers: headers).responseJSON { response in
-            debugPrint(response)
-            debugPrint(response.data)
-            
-            
+        Alamofire.request(auth).responseJSON { response in
+//            debugPrint(response)
+            let realData = NSData(data: response.data!)
+            let stringData = NSString(data: realData as Data, encoding: String.Encoding.utf8.rawValue)
+//            print(stringData)
         }
         
+    }
+    
+    func tokenize() {
         
-        let token = "https://dribbble.com/oauth/token"
+        let token = "https://dribbble.com/oauth/token?client_id=f08f587c2beffc39e8ea5fb87a45a794f37d2c9cb62042070d099a88e976d7d9&client_secret=ba7c4c1556986e175f3c06a6e556c6c1eafc99c6d333470bcb9affba837f9d81"
         let tokenUrl = URL(string: token)!
         
-//        Alamofire.request(tokenUrl, headers: headers).responseJSON { response in
-//            
-//            print(response.result)
-//            
-//            guard let json = response.result.value as? [String: Any] else {
-//                print("didn't get todo object as JSON from API")
-//                print("Error: \(String(describing: response.result.error))")
-//                return
-//            }
+        let tokenHeader: HTTPHeaders = [
+            "Authorization": "Bearer cd1fb8d92975c1f17efb46df08f3ca9018aff49f30af187f92b0531d1194b0aa"
+        ]
         
-//            DispatchQueue.main.async(execute: {
-//                
-//            })
-//            
-//        }
-        
+        Alamofire.request(tokenUrl, headers: tokenHeader).responseJSON { response in
+            
+            print(response)
+            let datastring = NSString(data: response.data!, encoding: String.Encoding.utf8.rawValue)
+            //            print(datastring as Any)
+            
+            guard let json = response.result.value as? [String: Any] else {
+                print("didn't get object as JSON from API")
+                print("Error: \(String(describing: response.result.error))")
+                return
+            }
+            print("JSON: \(json)")
+            
+            DispatchQueue.main.async(execute: {
+                
+            })
+            
+        }
     }
 
 
