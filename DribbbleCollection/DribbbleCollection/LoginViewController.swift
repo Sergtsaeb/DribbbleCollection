@@ -20,21 +20,22 @@ class LoginViewController: UIViewController {
   
     @IBAction func sendRequest(_ sender: Any) {
         authorize()
-        tokenize()
     }
     
     func authorize() {
-        let auth = "https://dribbble.com/oauth/authorize?client_id=f08f587c2beffc39e8ea5fb87a45a794f37d2c9cb62042070d099a88e976d7d9&scope=public+write"
+        let auth = "https://dribbble.com/oauth/authorize?"
         
-        let authHeader: HTTPHeaders = [
-            "client_id": "f08f587c2beffc39e8ea5fb87a45a794f37d2c9cb62042070d099a88e976d7d9"
+        let authParam: Parameters = [
+        "client_id": "f08f587c2beffc39e8ea5fb87a45a794f37d2c9cb62042070d099a88e976d7d9",
+        "redirect_uri": "https://api.dribbble.com?callback=shot"
         ]
         
-        Alamofire.request(auth).responseJSON { response in
-//            debugPrint(response)
+        Alamofire.request(auth, parameters: authParam).validate().responseJSON { response in
+            print(response.result)
+            debugPrint(response)
             let realData = NSData(data: response.data!)
             let stringData = NSString(data: realData as Data, encoding: String.Encoding.utf8.rawValue)
-//            print(stringData)
+            print(stringData)
         }
         
     }
