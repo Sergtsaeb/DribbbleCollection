@@ -25,16 +25,14 @@ class DribbbleCollectionViewController: UIViewController {
     
     var shotsURL = "https://api.dribbble.com/v1/shots/"
     let accessToken = "cd1fb8d92975c1f17efb46df08f3ca9018aff49f30af187f92b0531d1194b0aa"
-    let clientID = "f08f587c2beffc39e8ea5fb87a45a794f37d2c9cb62042070d099a88e976d7d9"
-    let clientSecret = "ba7c4c1556986e175f3c06a6e556c6c1eafc99c6d333470bcb9affba837f9d81"
+
     
     typealias JSONStandard = [String: AnyObject]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.calculateCellWidth()
         
-//        callAlamo(url: shotsURL)
+        self.calculateCellWidth()
 //        self.inspireCollectionView.dataSource = self
         
         let inspireNib = UINib(nibName: "DribbbleCell", bundle: nil)
@@ -51,6 +49,8 @@ class DribbbleCollectionViewController: UIViewController {
         let height = width * kLazyLoadAspectRatio // square factor: 1
         self.cellSize = CGSize(width: width, height: height)
     }
+    
+       
 
     // MARK: - Lazy Loading of cells
     
