@@ -7,3 +7,20 @@
 //
 
 import Foundation
+import UIKit
+
+class Shot {
+    var id: String?
+    var title: String?
+    var description: String?
+    var images: UIImage?
+    var likesCount: String?
+    var reboundsCount: String?
+    var bucketsCount: String?
+    var projectsURL: String?
+    var tags: [String]?
+    var user: User?
+    
+    
+    
+}

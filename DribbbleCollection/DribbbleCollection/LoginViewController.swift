@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
     }
     
     func authorize() {
-        let auth = "https://dribbble.com/oauth/authorize?"
+        let auth = "https://dribbble.com/oauth/authorize"
         
         let authParam: Parameters = [
         "client_id": "f08f587c2beffc39e8ea5fb87a45a794f37d2c9cb62042070d099a88e976d7d9",
