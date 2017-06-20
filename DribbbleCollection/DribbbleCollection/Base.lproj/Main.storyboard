@@ -32,6 +32,7 @@
                                 </state>
                                 <connections>
                                     <action selector="sendRequest:" destination="1Cq-kA-g9l" eventType="touchUpInside" id="hlO-Qx-KAk"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="AIw-Sy-sJ5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTB-ur-nvN">

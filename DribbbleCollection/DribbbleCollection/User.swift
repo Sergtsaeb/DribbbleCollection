@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class User {
+    var id: NSNumber?
+    var name: String?
+    var username: String?
+    var htmlURL: String?
+
+}

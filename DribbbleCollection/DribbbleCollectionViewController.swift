@@ -16,42 +16,25 @@ private let kLazyLoadAspectRatio: CGFloat = 1.0 // width / height aspect ratio f
 private let kLazyLoadColumnsPerRow: CGFloat = 3.0 // number of columns for every row.
 
 class DribbbleCollectionViewController: UIViewController {
-
     @IBOutlet weak var inspireCollectionView: UICollectionView!
     
-    var dribbbleItems = [Any]()
+    var dribbbleItems = [Shot]()
     var cellSize = CGSize()
-    
-    
-    var shotsURL = "https://api.dribbble.com/v1/shots/"
     let accessToken = "cd1fb8d92975c1f17efb46df08f3ca9018aff49f30af187f92b0531d1194b0aa"
-
-    
-    typealias JSONStandard = [String: AnyObject]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.calculateCellWidth()
-//        self.inspireCollectionView.dataSource = self
-        
+        self.inspireCollectionView.dataSource = self
         let inspireNib = UINib(nibName: "DribbbleCell", bundle: nil)
-        self.inspireCollectionView.register(inspireNib, forCellWithReuseIdentifier: "cell")
+        self.inspireCollectionView.register(inspireNib, forCellWithReuseIdentifier: "DribbbleCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         inspireCollectionView.reloadData()
     }
-
-    func calculateCellWidth() {
-        let width = (kLazyLoadScreenSize - (CGFloat(kLazyLoadColumnsPerRow + 1.0) * kLazyLoadSpan)) / CGFloat(kLazyLoadColumnsPerRow) - 1
-        let height = width * kLazyLoadAspectRatio // square factor: 1
-        self.cellSize = CGSize(width: width, height: height)
-    }
     
-       
-
     // MARK: - Lazy Loading of cells
     
 //    func loadImagesForOnscreenRows() {
@@ -64,7 +47,6 @@ class DribbbleCollectionViewController: UIViewController {
 //            }
 //        }
 //    }
-    
     
 //    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
 //        loadImagesForOnscreenRows()
@@ -82,38 +64,21 @@ extension DribbbleCollectionViewController: UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DribbbleCell", for: indexPath) as! DribbbleCell
-        
-//        updateImageForCell(cell, inCollectionView: collectionView, withEntry: dribbbleItems[(indexPath as NSIndexPath).row] as! String, atIndexPath: indexPath)
+        let cell = inspireCollectionView.dequeueReusableCell(withReuseIdentifier: "DribbbleCell", for: indexPath) as! DribbbleCell
+        cell.backgroundColor = UIColor.red
+        cell.titleLabel.text = dribbbleItems[indexPath.row].title
         
         return cell
-
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dribbbleItems.count
+//        return dribbbleItems.count
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return cellSize
     }
     
-//    func updateImageForCell(_ cell: UICollectionViewCell, inCollectionView collectionView: UICollectionView, withEntry: String, atIndexPath indexPath: IndexPath) {
-//        let imageView = cell.viewWithTag(kLazyLoadCellImageViewTag) as! UIImageView
-//        //imageView.image = kLazyLoadPlaceholderImage
-//        // load image.
-//        let imageURL = dribbbleItems[(indexPath as NSIndexPath).row]
-//        ImageManager.sharedInstance.downloadImageFromURL(imageURL as! String) { (success, image) -> Void in
-//            if success && image != nil {
-//                if (collectionView.indexPath(for: cell) as NSIndexPath?)?.row == (indexPath as NSIndexPath).row {
-//                    imageView.image = image
-//                }
-//            }
-//        }
-//    }
-
-
-    
-
     
 }

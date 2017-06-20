@@ -36,16 +36,23 @@ class ImageManager: NSObject {
     let clientSecret = "ba7c4c1556986e175f3c06a6e556c6c1eafc99c6d333470bcb9affba837f9d81"
 //    "Authorization": "Bearer cd1fb8d92975c1f17efb46df08f3ca9018aff49f30af187f92b0531d1194b0aa"
     
-//    func authorize() {
+    func authorize() {
 //        let url = "https://api.dribbble.com/v1/user"
-//        
-//        
-//        
-//        let auth = "https://dribbble.com/oauth/authorize"
-//        Alamofire.request(auth).responseJSON { response in
+        
+    let params : Parameters = [
+                "id": "Number"
+                ]
+    
+    let headers: HTTPHeaders = [
+        "Content-Type": "application/json"
+    ]
+        
+    var shotsListURL = "http://api.dribbble.com/shots/id/list?page=&per_page="
+        
+//            Alamofire.request(shotsListURL, headers: headers, parameters: params).responseJSON { response in
 //            debugPrint(response)
 //        }
-//        
+//
 //        let token = "https://dribbble.com/oauth/authorize"
 //        let tokenUrl = URL(string: token)!
 //        
@@ -64,16 +71,13 @@ class ImageManager: NSObject {
 //            }
 //        
 //            DispatchQueue.main.async(execute: {
-//
 //                
 //                                })
-//            
-//            
 //        }
 //        
 //    }
     
 
-
+}
 
 }
