@@ -10,7 +10,7 @@
 		01D8AD8496ED4D299349A890 /* Pods_DribbbleCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E283D59282D777A16A5BAA4 /* Pods_DribbbleCollection.framework */; };
 		C019BAE01EF14F4900AB4072 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C019BADF1EF14F4900AB4072 /* LoginViewController.swift */; };
 		C019BAE21EF14F6C00AB4072 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C019BAE11EF14F6C00AB4072 /* User.swift */; };
-		C019BAE41EF14F9E00AB4072 /* Shots.swift in Sources */ = {isa = PBXBuildFile; fileRef = C019BAE31EF14F9E00AB4072 /* Shots.swift */; };
+		C019BAE41EF14F9E00AB4072 /* Shot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C019BAE31EF14F9E00AB4072 /* Shot.swift */; };
 		C01D46641EE7D2F50081A7D3 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01D46631EE7D2F50081A7D3 /* ImageManager.swift */; };
 		C0B53FA91EBE9F1C00C3CE8E /* GalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B53FA81EBE9F1C00C3CE8E /* GalleryItem.swift */; };
 		C0C4EF181EA83A9E000B4F02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4EF171EA83A9E000B4F02 /* AppDelegate.swift */; };
@@ -19,7 +19,7 @@
 		C0C4EF221EA83A9E000B4F02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C4EF201EA83A9E000B4F02 /* LaunchScreen.storyboard */; };
 		C0C4EF2B1EA83BCF000B4F02 /* DribbbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4EF291EA83BCF000B4F02 /* DribbbleCell.swift */; };
 		C0C4EF2C1EA83BCF000B4F02 /* DribbbleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0C4EF2A1EA83BCF000B4F02 /* DribbbleCell.xib */; };
-		C0C4EF2E1EA83BF4000B4F02 /* DribbbleCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4EF2D1EA83BF4000B4F02 /* DribbbleCollectionView.swift */; };
+		C0C4EF2E1EA83BF4000B4F02 /* DribbbleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4EF2D1EA83BF4000B4F02 /* DribbbleCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		62EB71849FD48714F9D69E6A /* Pods-DribbbleCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DribbbleCollection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DribbbleCollection/Pods-DribbbleCollection.debug.xcconfig"; sourceTree = "<group>"; };
 		C019BADF1EF14F4900AB4072 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C019BAE11EF14F6C00AB4072 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		C019BAE31EF14F9E00AB4072 /* Shots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shots.swift; sourceTree = "<group>"; };
+		C019BAE31EF14F9E00AB4072 /* Shot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shot.swift; sourceTree = "<group>"; };
 		C01D46631EE7D2F50081A7D3 /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		C0B53FA81EBE9F1C00C3CE8E /* GalleryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryItem.swift; sourceTree = "<group>"; };
 		C0C4EF141EA83A9E000B4F02 /* DribbbleCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DribbbleCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,7 +38,7 @@
 		C0C4EF231EA83A9E000B4F02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0C4EF291EA83BCF000B4F02 /* DribbbleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DribbbleCell.swift; path = ../DribbbleCell.swift; sourceTree = "<group>"; };
 		C0C4EF2A1EA83BCF000B4F02 /* DribbbleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DribbbleCell.xib; path = ../DribbbleCell.xib; sourceTree = "<group>"; };
-		C0C4EF2D1EA83BF4000B4F02 /* DribbbleCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DribbbleCollectionView.swift; sourceTree = SOURCE_ROOT; };
+		C0C4EF2D1EA83BF4000B4F02 /* DribbbleCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DribbbleCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
 		D941DC4125F34DEF5F2D64CC /* Pods-DribbbleCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DribbbleCollection.release.xcconfig"; path = "Pods/Target Support Files/Pods-DribbbleCollection/Pods-DribbbleCollection.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +105,7 @@
 			children = (
 				C01D46631EE7D2F50081A7D3 /* ImageManager.swift */,
 				C019BAE11EF14F6C00AB4072 /* User.swift */,
-				C019BAE31EF14F9E00AB4072 /* Shots.swift */,
+				C019BAE31EF14F9E00AB4072 /* Shot.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -125,7 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				C0C4EF171EA83A9E000B4F02 /* AppDelegate.swift */,
-				C0C4EF2D1EA83BF4000B4F02 /* DribbbleCollectionView.swift */,
+				C0C4EF2D1EA83BF4000B4F02 /* DribbbleCollectionViewController.swift */,
 				C019BADF1EF14F4900AB4072 /* LoginViewController.swift */,
 			);
 			name = Controller;
@@ -267,13 +267,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C019BAE01EF14F4900AB4072 /* LoginViewController.swift in Sources */,
-				C0C4EF2E1EA83BF4000B4F02 /* DribbbleCollectionView.swift in Sources */,
+				C0C4EF2E1EA83BF4000B4F02 /* DribbbleCollectionViewController.swift in Sources */,
 				C0C4EF181EA83A9E000B4F02 /* AppDelegate.swift in Sources */,
 				C0C4EF2B1EA83BCF000B4F02 /* DribbbleCell.swift in Sources */,
 				C01D46641EE7D2F50081A7D3 /* ImageManager.swift in Sources */,
 				C0B53FA91EBE9F1C00C3CE8E /* GalleryItem.swift in Sources */,
 				C019BAE21EF14F6C00AB4072 /* User.swift in Sources */,
-				C019BAE41EF14F9E00AB4072 /* Shots.swift in Sources */,
+				C019BAE41EF14F9E00AB4072 /* Shot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
