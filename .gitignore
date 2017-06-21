@@ -118,6 +118,7 @@ playground.xcworkspace
 # Packages/
 # Package.pins
 .build/
+Keys.Swift
 
 # CocoaPods
 #
