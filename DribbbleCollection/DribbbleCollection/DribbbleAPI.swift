@@ -11,19 +11,24 @@ import Alamofire
 class DribbbleAPI: NSObject {
     
     static let shared = DribbbleAPI()
+    let userURL = "https://api.dribbble.com/v1/user"
     
-    let shotURL = "http://api.dribbble.com/shots"
-    
-    //        let authParam: Parameters = [
-    //        "client_id": "f08f587c2beffc39e8ea5fb87a45a794f37d2c9cb62042070d099a88e976d7d9"
-    //        ]
-    //
-    
-    func getShots() {
-        Alamofire.request(shotURL).responseJSON { (response) in
+    func getUser() {
+        guard let token = UserDefaults.standard.object(forKey: "access_token") else { return }
+        let header: HTTPHeaders = [
+            "Authorization": "Bearer \(token)"
+        ]
+        
+        Alamofire.request(userURL, headers: header).responseJSON { (response) in
             print(response.result)
+            
+            if let json = response.result.value as? [String: Any] {
+                print(json)
+            }
             
         }
     }
+    
+    
     
 }

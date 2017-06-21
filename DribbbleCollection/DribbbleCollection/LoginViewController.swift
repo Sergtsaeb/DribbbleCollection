@@ -15,18 +15,17 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
    
     }
-  
+    
     @IBAction func sendRequest(_ sender: Any) {
         authorize()
+        
     }
     
     func authorize() {
         let auth = "https://dribbble.com/oauth/authorize?client_id=\(kClientID)"
         UIApplication.shared.open(URL(string: auth)!, options: [:], completionHandler: nil)
-        
     }
     
  
