@@ -41,7 +41,7 @@ class DribbbleCollectionViewController: UIViewController, UITabBarControllerDele
         let token = UserDefaults.standard.object(forKey: "access_token")
         let loginVC = LoginViewController()
         
-        if token != nil {
+        if token == nil {
             self.present(loginVC, animated: true, completion: nil)
         } else {
             print("Already logged in!")
