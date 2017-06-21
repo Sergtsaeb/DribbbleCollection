@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var code = ""
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
         return true
     }
     
@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (!code.isEmpty) {
             tokenize()
         }
+        
         return true
     }
     
@@ -66,24 +67,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         
-        
-//        Alamofire.request(tokenURL, parameters: param).responseJSON { response in
-//
-//            print(response)
-//            let datastring = NSString(data: response.data!, encoding: String.Encoding.utf8.rawValue)
-//            print(datastring as Any)
-//
-//            guard let json = response.result.value as? [String: Any] else {
-//                print("didn't get object as JSON from API")
-//                print("Error: \(String(describing: response.result.error))")
-//                return
-//            }
-//            print("JSON: \(json)")
-//
-//            DispatchQueue.main.async(execute: {
-//
-//            })
-//        }
     }
     
     

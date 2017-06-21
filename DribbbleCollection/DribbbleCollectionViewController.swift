@@ -15,15 +15,17 @@ private let kLazyLoadSpan: CGFloat = 10.0
 private let kLazyLoadAspectRatio: CGFloat = 1.0 // width / height aspect ratio for non square cells.
 private let kLazyLoadColumnsPerRow: CGFloat = 3.0 // number of columns for every row.
 
-class DribbbleCollectionViewController: UIViewController {
+class DribbbleCollectionViewController: UIViewController, UITabBarControllerDelegate {
     @IBOutlet weak var inspireCollectionView: UICollectionView!
     
+    var token = ""
     var dribbbleItems = [Shot]()
     var cellSize = CGSize()
-//    let accessToken = "cd1fb8d92975c1f17efb46df08f3ca9018aff49f30af187f92b0531d1194b0aa"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DribbbleAPI.shared.getUser()
+        checkToken()
         
         self.inspireCollectionView.dataSource = self
         let inspireNib = UINib(nibName: "DribbbleCell", bundle: nil)
@@ -33,6 +35,17 @@ class DribbbleCollectionViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         inspireCollectionView.reloadData()
+    }
+    
+    func checkToken() {
+        let token = UserDefaults.standard.object(forKey: "access_token")
+        let loginVC = LoginViewController()
+        
+        if token != nil {
+            self.present(loginVC, animated: true, completion: nil)
+        } else {
+            print("Already logged in!")
+        }
     }
     
     // MARK: - Lazy Loading of cells
