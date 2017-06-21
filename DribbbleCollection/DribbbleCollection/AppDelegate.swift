@@ -7,18 +7,86 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var code = ""
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
-
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        print(url)
+        print("retrieved code")
+        
+        code = url.absoluteString.components(separatedBy: "=").last!
+        print("My code: \(code)")
+        if (!code.isEmpty) {
+            tokenize()
+        }
+        return true
+    }
+    
+    func tokenize() {
+        let tokenURL = "https://dribbble.com/oauth/token"
+        
+        let param: Parameters = [
+            "client_id": kClientID,
+            "client_secret": kClientSecret,
+            "code": code
+        ]
+        
+        Alamofire.request(tokenURL, method: .post, parameters: param).responseJSON { (response) in
+            debugPrint(response)
+            
+            switch response.result {
+            case .success:
+                print("Validation Successful")
+                if let jsonDict = response.result.value as? [String : Any] {
+                    print(jsonDict)
+                    
+                    if let token = jsonDict["access_token"] {
+                        UserDefaults.standard.set(token, forKey: "access_token")
+                    }
+                    
+                    if let mytoken = UserDefaults.standard.object(forKey: "access_token") {
+                        print(mytoken)
+                    }
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
+        
+        
+//        Alamofire.request(tokenURL, parameters: param).responseJSON { response in
+//
+//            print(response)
+//            let datastring = NSString(data: response.data!, encoding: String.Encoding.utf8.rawValue)
+//            print(datastring as Any)
+//
+//            guard let json = response.result.value as? [String: Any] else {
+//                print("didn't get object as JSON from API")
+//                print("Error: \(String(describing: response.result.error))")
+//                return
+//            }
+//            print("JSON: \(json)")
+//
+//            DispatchQueue.main.async(execute: {
+//
+//            })
+//        }
+    }
+    
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

@@ -12,7 +12,8 @@
 		C019BAE21EF14F6C00AB4072 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C019BAE11EF14F6C00AB4072 /* User.swift */; };
 		C019BAE41EF14F9E00AB4072 /* Shot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C019BAE31EF14F9E00AB4072 /* Shot.swift */; };
 		C01D46641EE7D2F50081A7D3 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01D46631EE7D2F50081A7D3 /* ImageManager.swift */; };
-		C0B53FA91EBE9F1C00C3CE8E /* GalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B53FA81EBE9F1C00C3CE8E /* GalleryItem.swift */; };
+		C02072791EF9E58100857E68 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02072781EF9E58100857E68 /* Keys.swift */; };
+		C03A8A1E1EFA028300B11B5F /* DribbbleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03A8A1D1EFA028300B11B5F /* DribbbleAPI.swift */; };
 		C0C4EF181EA83A9E000B4F02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4EF171EA83A9E000B4F02 /* AppDelegate.swift */; };
 		C0C4EF1D1EA83A9E000B4F02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C4EF1B1EA83A9E000B4F02 /* Main.storyboard */; };
 		C0C4EF1F1EA83A9E000B4F02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0C4EF1E1EA83A9E000B4F02 /* Assets.xcassets */; };
@@ -29,7 +30,8 @@
 		C019BAE11EF14F6C00AB4072 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C019BAE31EF14F9E00AB4072 /* Shot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shot.swift; sourceTree = "<group>"; };
 		C01D46631EE7D2F50081A7D3 /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
-		C0B53FA81EBE9F1C00C3CE8E /* GalleryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryItem.swift; sourceTree = "<group>"; };
+		C02072781EF9E58100857E68 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		C03A8A1D1EFA028300B11B5F /* DribbbleAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DribbbleAPI.swift; sourceTree = "<group>"; };
 		C0C4EF141EA83A9E000B4F02 /* DribbbleCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DribbbleCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0C4EF171EA83A9E000B4F02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0C4EF1C1EA83A9E000B4F02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		C0C4EF2F1EA83D9A000B4F02 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C03A8A1D1EFA028300B11B5F /* DribbbleAPI.swift */,
 				C01D46631EE7D2F50081A7D3 /* ImageManager.swift */,
 				C019BAE11EF14F6C00AB4072 /* User.swift */,
 				C019BAE31EF14F9E00AB4072 /* Shot.swift */,
@@ -116,7 +119,6 @@
 				C0C4EF1B1EA83A9E000B4F02 /* Main.storyboard */,
 				C0C4EF291EA83BCF000B4F02 /* DribbbleCell.swift */,
 				C0C4EF2A1EA83BCF000B4F02 /* DribbbleCell.xib */,
-				C0B53FA81EBE9F1C00C3CE8E /* GalleryItem.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -127,6 +129,7 @@
 				C0C4EF171EA83A9E000B4F02 /* AppDelegate.swift */,
 				C0C4EF2D1EA83BF4000B4F02 /* DribbbleCollectionViewController.swift */,
 				C019BADF1EF14F4900AB4072 /* LoginViewController.swift */,
+				C02072781EF9E58100857E68 /* Keys.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -267,11 +270,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C019BAE01EF14F4900AB4072 /* LoginViewController.swift in Sources */,
+				C02072791EF9E58100857E68 /* Keys.swift in Sources */,
+				C03A8A1E1EFA028300B11B5F /* DribbbleAPI.swift in Sources */,
 				C0C4EF2E1EA83BF4000B4F02 /* DribbbleCollectionViewController.swift in Sources */,
 				C0C4EF181EA83A9E000B4F02 /* AppDelegate.swift in Sources */,
 				C0C4EF2B1EA83BCF000B4F02 /* DribbbleCell.swift in Sources */,
 				C01D46641EE7D2F50081A7D3 /* ImageManager.swift in Sources */,
-				C0B53FA91EBE9F1C00C3CE8E /* GalleryItem.swift in Sources */,
 				C019BAE21EF14F6C00AB4072 /* User.swift in Sources */,
 				C019BAE41EF14F9E00AB4072 /* Shot.swift in Sources */,
 			);

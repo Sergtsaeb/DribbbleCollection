@@ -24,7 +24,7 @@ class Shot {
     
     required init(json: JSON) {
         self.id = json["id"].number
-        self.title = json["title"].string
+        self.title = json["title"].string!
         self.description = json["description"].string
         self.images = json["images"].string
         self.user = json["user"].string

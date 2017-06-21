@@ -20,7 +20,7 @@ class DribbbleCollectionViewController: UIViewController {
     
     var dribbbleItems = [Shot]()
     var cellSize = CGSize()
-    let accessToken = "cd1fb8d92975c1f17efb46df08f3ca9018aff49f30af187f92b0531d1194b0aa"
+//    let accessToken = "cd1fb8d92975c1f17efb46df08f3ca9018aff49f30af187f92b0531d1194b0aa"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +66,7 @@ extension DribbbleCollectionViewController: UICollectionViewDelegate, UICollecti
         
         let cell = inspireCollectionView.dequeueReusableCell(withReuseIdentifier: "DribbbleCell", for: indexPath) as! DribbbleCell
         cell.backgroundColor = UIColor.red
-        cell.titleLabel.text = dribbbleItems[indexPath.row].title
+//        cell.titleLabel.text = dribbbleItems[indexPath.row].title
         
         return cell
     }
