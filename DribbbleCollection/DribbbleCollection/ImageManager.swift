@@ -47,7 +47,7 @@ class ImageManager: NSObject {
         "Content-Type": "application/json"
     ]
         
-    var shotsListURL = "http://api.dribbble.com/shots/id/list?page=&per_page="
+   
         
 //            Alamofire.request(shotsListURL, headers: headers, parameters: params).responseJSON { response in
 //            debugPrint(response)
