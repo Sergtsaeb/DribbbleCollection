@@ -39,8 +39,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func presentLogin() {
-        if let DribbbleVC = self.window?.rootViewController as? DribbbleCollectionViewController, let storyboard = DribbbleVC.storyboard {
-            
+        if let dribbbleVC = self.window?.rootViewController as? DribbbleCollectionViewController, let storyboard = dribbbleVC.storyboard {
+            if let loginVC = storyboard.instantiateViewController(withIdentifier: LoginViewController.identifier) as? LoginViewController {
+                
+                dribbbleVC.addChildViewController(loginVC)
+                dribbbleVC.view.addSubview(loginVC.view)
+                
+            }
             
         }
     }
