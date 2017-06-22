@@ -18,7 +18,6 @@ private let kLazyLoadColumnsPerRow: CGFloat = 3.0 // number of columns for every
 class DribbbleCollectionViewController: UIViewController, UITabBarControllerDelegate {
     @IBOutlet weak var inspireCollectionView: UICollectionView!
     
-    var token = ""
     var dribbbleItems = [Shot]()
     var cellSize = CGSize()
     
@@ -26,6 +25,7 @@ class DribbbleCollectionViewController: UIViewController, UITabBarControllerDele
         super.viewDidLoad()
         DribbbleAPI.shared.getUser()
         checkToken()
+        DribbbleAPI.shared.getShots()
         
         self.inspireCollectionView.dataSource = self
         let inspireNib = UINib(nibName: "DribbbleCell", bundle: nil)
