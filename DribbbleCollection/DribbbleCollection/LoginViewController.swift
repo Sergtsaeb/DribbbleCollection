@@ -9,6 +9,9 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    @IBOutlet weak var authorizeButton: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

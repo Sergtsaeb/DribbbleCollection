@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        
+        
         return true
     }
     
@@ -29,9 +31,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("My code: \(code)")
         if (!code.isEmpty) {
             tokenize()
+            
         }
         
         return true
+    }
+    
+    func presentLogin() {
+        let token = UserDefaults.standard.object(forKey: "access_token")
+        
+        if token == nil {
+//            self.present(loginVC, animated: true, completion: nil)
+        } else {
+            print("Already logged in!")
+        }
     }
     
     func tokenize() {
