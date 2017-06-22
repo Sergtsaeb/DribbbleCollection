@@ -47,6 +47,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="authorizeButton" destination="Eix-Fq-ylU" id="8Qw-qT-kPU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dBh-QM-e8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

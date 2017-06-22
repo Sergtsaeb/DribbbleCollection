@@ -24,7 +24,6 @@ class DribbbleCollectionViewController: UIViewController, UITabBarControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         DribbbleAPI.shared.getUser()
-        checkToken()
         DribbbleAPI.shared.getShots()
         
         self.inspireCollectionView.dataSource = self
@@ -37,16 +36,6 @@ class DribbbleCollectionViewController: UIViewController, UITabBarControllerDele
         inspireCollectionView.reloadData()
     }
     
-    func checkToken() {
-        let token = UserDefaults.standard.object(forKey: "access_token")
-        let loginVC = LoginViewController()
-        
-        if token == nil {
-            self.present(loginVC, animated: true, completion: nil)
-        } else {
-            print("Already logged in!")
-        }
-    }
     
     // MARK: - Lazy Loading of cells
     
