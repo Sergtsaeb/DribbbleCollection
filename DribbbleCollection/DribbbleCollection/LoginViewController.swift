@@ -6,10 +6,7 @@
 //  Copyright © 2017 Serg Tsogtbaatar. All rights reserved.
 //
 
-import Foundation
 import UIKit
-import Alamofire
-import SwiftyJSON
 
 class LoginViewController: UIViewController {
 
@@ -20,7 +17,6 @@ class LoginViewController: UIViewController {
     
     @IBAction func sendRequest(_ sender: Any) {
         authorize()
-        
     }
     
     func authorize() {
