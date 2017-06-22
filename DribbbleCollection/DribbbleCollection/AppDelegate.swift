@@ -17,33 +17,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var code = ""
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        
+        if let token = UserDefaults.standard.getAccessToken() {
+            print(token)
+        } else {
+            presentLogin()
+        }
         
         return true
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        print(url)
         print("retrieved code")
         
         code = url.absoluteString.components(separatedBy: "=").last!
         print("My code: \(code)")
         if (!code.isEmpty) {
             tokenize()
-            
         }
         
         return true
     }
     
     func presentLogin() {
-        let token = UserDefaults.standard.object(forKey: "access_token")
-        
-        if token == nil {
-//            self.present(loginVC, animated: true, completion: nil)
-        } else {
-            print("Already logged in!")
+        if let DribbbleVC = self.window?.rootViewController as? DribbbleCollectionViewController, let storyboard = DribbbleVC.storyboard {
+            
+            
         }
     }
     
