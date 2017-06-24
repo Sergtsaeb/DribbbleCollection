@@ -36,6 +36,15 @@ class DribbbleCollectionViewController: UIViewController, UITabBarControllerDele
         inspireCollectionView.reloadData()
     }
     
+//    func getAllShots() {
+//        DribbbleAPI.shared.getShots { shots in
+//            if let shots = shots {
+//                self.dribbbleItems = shots
+//            }
+//        }
+//
+//    }
+    
     
     // MARK: - Lazy Loading of cells
     
@@ -60,27 +69,23 @@ class DribbbleCollectionViewController: UIViewController, UITabBarControllerDele
 
 }
 
-
-
 extension DribbbleCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = inspireCollectionView.dequeueReusableCell(withReuseIdentifier: "DribbbleCell", for: indexPath) as! DribbbleCell
         cell.backgroundColor = UIColor.red
-//        cell.titleLabel.text = dribbbleItems[indexPath.row].title
+        cell.titleLabel.text = dribbbleItems[indexPath.row].title
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return dribbbleItems.count
-        return 5
+        return dribbbleItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return cellSize
     }
-    
     
 }
