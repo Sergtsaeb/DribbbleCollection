@@ -1,15 +1,24 @@
 PODS:
   - Alamofire (4.4.0)
+  - Pageboy (1.0.1)
+  - PureLayout (3.0.2)
   - SwiftyJSON (3.1.4)
+  - Tabman (0.4.6):
+    - Pageboy (~> 1.0.0)
+    - PureLayout (~> 3.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
   - SwiftyJSON
+  - Tabman
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Pageboy: 711d82b6d099ff7d0188af54f7445be389824392
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  Tabman: 4615a910835198a8b7dc2186a9c0c56e4c328839
 
-PODFILE CHECKSUM: 9337ed4e30efabd865cafec0f747180672e827ee
+PODFILE CHECKSUM: ccd1d3869c6075c9b174a6d0a5041fa3a897a2ce
 
 COCOAPODS: 1.2.0
