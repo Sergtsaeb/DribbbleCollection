@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class DribbbleAPI: NSObject {
     
@@ -32,15 +33,23 @@ class DribbbleAPI: NSObject {
     
     func getShots() {
         guard let token = UserDefaults.standard.object(forKey: "access_token") else { return }
-        let header: HTTPHeaders = [
-            "Authorization": "Bearer \(token)"
-        ]
+        let header: HTTPHeaders = [ "Authorization": "Bearer \(token)" ]
+        
         Alamofire.request(shotsListURL, headers: header).responseJSON { response in
             debugPrint(response)
             
-            if let json = response.result.value as? [String: Any] {
-                print("Shots JSON: \(json)")
+            switch response.result {
+                
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+//                let animated = json[0]["animated"]
+//                print(animated)
+                
+            case .failure(let error):
+                print(error)
             }
+            
         }
         
         

@@ -15,6 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var code = ""
+    
+    var loginController: LoginViewController?
+    var dribbbleController: DribbbleCollectionViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         if let token = UserDefaults.standard.getAccessToken() {
@@ -44,9 +47,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 dribbbleVC.addChildViewController(loginVC)
                 dribbbleVC.view.addSubview(loginVC.view)
+                loginVC.didMove(toParentViewController: dribbbleVC)
                 
+                self.loginController = loginVC
+                self.dribbbleController = dribbbleVC
             }
-            
         }
     }
     
@@ -80,11 +85,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             case .failure(let error):
                 print(error)
             }
-            
         }
-        
     }
-    
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
