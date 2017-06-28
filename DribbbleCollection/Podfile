@@ -8,5 +8,6 @@ target 'DribbbleCollection' do
   # Pods for DribbbleCollection
   pod 'Alamofire', '~> 4.4'
   pod 'SwiftyJSON'
+  pod 'Tabman'
 
 end

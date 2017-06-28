@@ -44,28 +44,6 @@ class DribbbleCollectionViewController: UIViewController, UITabBarControllerDele
 //        }
 //
 //    }
-    
-    
-    // MARK: - Lazy Loading of cells
-    
-//    func loadImagesForOnscreenRows() {
-//        if dribbbleItems.count > 0 {
-//            let visiblePaths = inspireCollectionView.indexPathsForVisibleItems
-//            for indexPath in visiblePaths {
-////                let entry = dribbbleItems[(indexPath as NSIndexPath).row]
-//                let cell = self.collectionView(inspireCollectionView, cellForItemAt: indexPath)
-//                updateImageForCell(cell, inCollectionView: inspireCollectionView, withEntry: "dribbbleItems", atIndexPath: indexPath)
-//            }
-//        }
-//    }
-    
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        loadImagesForOnscreenRows()
-//    }
-//    
-//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//        if !decelerate { loadImagesForOnscreenRows() }
-//    }
 
 }
 
@@ -82,7 +60,7 @@ extension DribbbleCollectionViewController: UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        return dribbbleItems.count
-        return 4
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
