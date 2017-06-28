@@ -75,13 +75,14 @@ extension DribbbleCollectionViewController: UICollectionViewDelegate, UICollecti
         
         let cell = inspireCollectionView.dequeueReusableCell(withReuseIdentifier: "DribbbleCell", for: indexPath) as! DribbbleCell
         cell.backgroundColor = UIColor.red
-        cell.titleLabel.text = dribbbleItems[indexPath.row].title
+//        cell.titleLabel.text = dribbbleItems[indexPath.row].title
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dribbbleItems.count
+//        return dribbbleItems.count
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
